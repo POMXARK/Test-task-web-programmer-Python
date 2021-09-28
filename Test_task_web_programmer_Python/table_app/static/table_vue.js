@@ -1,13 +1,13 @@
 new Vue({
-    el: '#table_vue',
+    el: '#table_app',
     data: {
-        table_rows:[]
+    table:[]
     },
     created: function(){
         const vm = this;
-        axios.get('')
+        axios.get('/api/table/')
         .then(function (response){
-            console.log(response.data)
+            vm.table = response.data
         })
     }
 }

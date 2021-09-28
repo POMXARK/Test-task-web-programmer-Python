@@ -1,26 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>
-        {% block table%}
-        {{ table }}
-        {% endblock %}
-    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <title>Title</title>
 </head>
 <body>
-
-{% verbatim %}
-<div class="container" id="table_vue">
-</div>
-{% endverbatim %}
 <tbody>
+{% verbatim %}
+<div class="container-fluid" id="table_app">
     <table class="table table-dark table-striped" >
         <thead>
         <tr>
@@ -29,23 +19,20 @@
             <td>Количество</td>
             <td>Расстояние</td>
         </tr>
-        {% block content %}
-        {% for el in table_rows %}
-        <tr>
+        <tr v-for="el in table">
             <td>{{ el.date }}</td>
             <td>{{ el.title }}</td>
             <td>{{ el.quantity }}</td>
             <td>{{ el.distance }}</td>
         </tr>
-        {% endfor %}
-        {% endblock %}
+
         </tr>
         </thead>
         </tr>
     </table>
-
+</div>
+{% endverbatim %}
 </tbody>
-<script src="/static/sort-table.js"></script>
 <script src="/static/table_vue.js"></script>
 </body>
 </html>
