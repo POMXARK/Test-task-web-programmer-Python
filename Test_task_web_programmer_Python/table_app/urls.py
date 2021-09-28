@@ -8,9 +8,7 @@ router = SimpleRouter()  # django rest
 router.register('api/table', views.TableView)
 
 urlpatterns = [
-    #path('',views.index),#, views.index),  # function call
     path('', views.table_vue),  # function call
-    # connection  add page transition tracking
 ]
 
 urlpatterns += router.urls
