@@ -5,13 +5,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <script src="/static/sort-table.js"></script>
     <title>Title</title>
 </head>
 <body>
-<tbody>
+
 {% verbatim %}
 <div class="container-fluid" id="table_app">
-    <table class="table table-dark table-striped" >
+    <table class="table table-dark table-striped js-sort-table" >
         <thead>
         <tr>
             <td>Дата</td>
@@ -19,20 +20,18 @@
             <td>Количество</td>
             <td>Расстояние</td>
         </tr>
-        <tr v-for="el in table">
-            <td>{{ el.date }}</td>
-            <td>{{ el.title }}</td>
-            <td>{{ el.quantity }}</td>
-            <td>{{ el.distance }}</td>
-        </tr>
-
-        </tr>
         </thead>
+        <tbody>
+        <tr v-for="el in table">
+            <td >{{ el.date }}</td>
+            <td >{{ el.title }}</td>
+            <td >{{ el.quantity }}</td>
+            <td >{{ el.distance }}</td>
         </tr>
+        </tbody>
     </table>
 </div>
 {% endverbatim %}
-</tbody>
 <script src="/static/table_vue.js"></script>
 </body>
 </html>
