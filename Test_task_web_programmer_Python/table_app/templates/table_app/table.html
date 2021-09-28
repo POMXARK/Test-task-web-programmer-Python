@@ -11,9 +11,10 @@
 <body>
 {% verbatim %}
 <div class="container-fluid" id="table_app">
-    <table class="table table-dark table-striped js-sort-table" >
+    <table class="table table-dark table-striped js-sort-table">
         <thead>
         <tr>
+            <td>#</td>
             <td>Дата</td>
             <td>Название</td>
             <td>Количество</td>
@@ -22,10 +23,11 @@
         </thead>
         <tbody>
         <tr v-for="el in table">
-            <td >{{ el.date }}</td>
-            <td >{{ el.title }}</td>
-            <td >{{ el.quantity }}</td>
-            <td >{{ el.distance }}</td>
+            <td>{{ el.id }}</td>
+            <td>{{ el.date }}</td>
+            <td>{{ el.title }}</td>
+            <td>{{ el.quantity }}</td>
+            <td>{{ el.distance }}</td>
         </tr>
         </tbody>
     </table>

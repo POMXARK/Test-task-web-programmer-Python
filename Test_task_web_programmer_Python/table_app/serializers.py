@@ -6,4 +6,4 @@ from .models import Table
 class TableSerializer(ModelSerializer):
     class Meta:
         model = Table
-        fields = ['date', 'title', 'quantity', 'distance']
+        fields = ['id','date', 'title', 'quantity', 'distance']
